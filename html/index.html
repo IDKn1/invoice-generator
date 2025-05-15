@@ -24,6 +24,10 @@
         </div>
       </div>
       <div class="total-row">
+        <div class="payment-details"> 
+          <p>Invoice payable through E-Transfer to</p>
+          <p id="payment-details"></p>
+        </div>
         <div class="total-list">
           <div class="cost">
             <p>price</p>
@@ -62,7 +66,7 @@
         <label for="paidAmount">amount already paid</label>
         <input id="paid-amount" type="text" name="paidAmount">
       </div>
-      <button onclick="window.print();">Download as PDF</button>
+      <button onclick="savePDF();">Download as PDF</button>
     </div>
     <script src="/main.js"> </script>
   </body>

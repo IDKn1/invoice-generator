@@ -90,3 +90,13 @@ invoiceNumber();
 calculateTotal();
 setInterval(invoiceNumber, 500);
 setInterval(calculateTotal, 500);
+
+function savePDF() {
+  const em = "nikolaisuvanto@gmail.com";
+  const target = document.getElementById("payment-details");
+
+  target.textContent = em;
+
+  window.print();
+  setTimeout((target.textContent = ""), 300);
+}

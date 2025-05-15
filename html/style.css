@@ -34,7 +34,7 @@
 /* improve line wrapping */
 p {
   text-wrap: pretty;
-  font-size: 1.25rem;
+  font-size: 1rem;
 }
 
 h1,
@@ -136,6 +136,19 @@ body {
 }
 
 .item-desc {
+  font-weight: 900;
+}
+
+/* payment details styling */
+
+.payment-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+
+#payment-details {
+  color: var(--primary-clr);
   font-weight: 900;
 }
 

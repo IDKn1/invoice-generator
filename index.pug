@@ -19,6 +19,9 @@ html(lang="en")
                     p.item-amount-label  rate
                     p.item-total-label  total 
             .total-row
+                .payment-details 
+                    p Invoice payable through E-Transfer to
+                    p#payment-details
                 .total-list
                     .cost
                         p price
@@ -46,7 +49,7 @@ html(lang="en")
             .amount-paid
                 label(for="paidAmount") amount already paid
                 input#paid-amount(type="text", name="paidAmount") 
-            button(onclick="window.print();") Download as PDF
+            button(onclick="savePDF();") Download as PDF
 
 
         script(src="/main.js") 
