@@ -6,31 +6,32 @@ html(lang="en")
         title Invoice generator 
         link(rel="stylesheet", href="/style.css")
     body
-        .heading
-            h1  Nikolai Suvanto
-            .detail-text
-                h3.label Invoice #
-                h2#invoice-number(contenteditable="true") 00001
-        #item-list
-            .item
-                p.item-desc-label    description 
-                p.item-qty-label     qty/hr
-                p.item-amount-label  rate
-                p.item-total-label  total 
-        .total-row
-            .total-list
-                .cost
-                    p price
-                    h4#cost-value 0
-                .tax
-                    p tax
-                    h4#tax-value 0
-                .paid
-                    p paid
-                    h4#paid-value(contenteditable="true") 0
-                .total
-                    p amount due
-                    h2#total-value 0
+        #invoice
+            .heading
+                h1  Nikolai Suvanto
+                .detail-text
+                    h3.label Invoice #
+                    h2#invoice-number(contenteditable="true") 00001
+            #item-list
+                .item
+                    p.item-desc-label    description 
+                    p.item-qty-label     qty/hr
+                    p.item-amount-label  rate
+                    p.item-total-label  total 
+            .total-row
+                .total-list
+                    .cost
+                        p price
+                        h4#cost-value 0
+                    .tax
+                        p tax
+                        h4#tax-value 0
+                    .paid
+                        p paid
+                        h4#paid-value(contenteditable="true") 0
+                    .total
+                        p amount due
+                        h2#total-value 0
         .settings 
             form#item-form.items-input 
                 label(for="itemInput") input for csv of items (format: description, qty/hr, rate)
@@ -39,6 +40,7 @@ html(lang="en")
             .tax-rate 
                 label(for="taxed") tax?
                 input#taxed(type="checkbox", name="taxed")
+            button(onclick="window.print();") Download as PDF
 
 
         script(src="/main.js") 

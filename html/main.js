@@ -78,4 +78,4 @@ document.getElementById("item-form").addEventListener("submit", function (e) {
 
 // Set interval once
 calculateTotal();
-setInterval(calculateTotal, 1000);
+setInterval(calculateTotal, 500);

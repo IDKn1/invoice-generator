@@ -7,38 +7,40 @@
     <link rel="stylesheet" href="/style.css">
   </head>
   <body>
-    <div class="heading">
-      <h1> Nikolai Suvanto</h1>
-      <div class="detail-text">
-        <h3 class="label">Invoice #</h3>
-        <h2 id="invoice-number" contenteditable="true">00001</h2>
+    <div id="invoice">
+      <div class="heading">
+        <h1> Nikolai Suvanto</h1>
+        <div class="detail-text">
+          <h3 class="label">Invoice #</h3>
+          <h2 id="invoice-number" contenteditable="true">00001</h2>
+        </div>
       </div>
-    </div>
-    <div id="item-list">
-      <div class="item">
-        <p class="item-desc-label">   description </p>
-        <p class="item-qty-label">    qty/hr</p>
-        <p class="item-amount-label"> rate</p>
-        <p class="item-total-label"> total </p>
+      <div id="item-list">
+        <div class="item">
+          <p class="item-desc-label">   description </p>
+          <p class="item-qty-label">    qty/hr</p>
+          <p class="item-amount-label"> rate</p>
+          <p class="item-total-label"> total </p>
+        </div>
       </div>
-    </div>
-    <div class="total-row">
-      <div class="total-list">
-        <div class="cost">
-          <p>price</p>
-          <h4 id="cost-value">0</h4>
-        </div>
-        <div class="tax">
-          <p>tax</p>
-          <h4 id="tax-value">0</h4>
-        </div>
-        <div class="paid">
-          <p>paid</p>
-          <h4 id="paid-value" contenteditable="true">0</h4>
-        </div>
-        <div class="total">
-          <p>amount due</p>
-          <h2 id="total-value">0</h2>
+      <div class="total-row">
+        <div class="total-list">
+          <div class="cost">
+            <p>price</p>
+            <h4 id="cost-value">0</h4>
+          </div>
+          <div class="tax">
+            <p>tax</p>
+            <h4 id="tax-value">0</h4>
+          </div>
+          <div class="paid">
+            <p>paid</p>
+            <h4 id="paid-value" contenteditable="true">0</h4>
+          </div>
+          <div class="total">
+            <p>amount due</p>
+            <h2 id="total-value">0</h2>
+          </div>
         </div>
       </div>
     </div>
@@ -52,6 +54,7 @@
         <label for="taxed">tax?</label>
         <input id="taxed" type="checkbox" name="taxed">
       </div>
+      <button onclick="window.print();">Download as PDF</button>
     </div>
     <script src="/main.js"> </script>
   </body>
