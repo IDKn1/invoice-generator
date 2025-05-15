@@ -137,8 +137,7 @@ body {
 
 /* total list styling */
 
-.total-row,
-.settings {
+.total-row {
   display: grid;
   grid-template-columns: 65% 1fr 1fr 1fr;
 }
@@ -146,23 +145,6 @@ body {
 .total-row {
   height: auto;
   max-height: 100vh;
-}
-
-.settings {
-  width: 100%;
-}
-
-.settings > * {
-  align-items: start;
-  grid-column: 1/2;
-  display: flex;
-  flex-direction: column;
-}
-
-@media print {
-  .settings {
-    display: none;
-  }
 }
 
 .total-list {
@@ -181,5 +163,69 @@ body {
 }
 
 #total-value {
+  color: var(--primary-clr);
+}
+
+/* settings styling */
+.settings {
+  border: 3px dotted var(--primary-clr);
+  width: fit-content;
+  padding: 1rem;
+  position: relative;
+}
+
+.settings::before {
+  content: "not rendered on print";
+  position: absolute;
+  color: var(--primary-clr);
+  top: -0.75rem;
+  background: var(--bg-clr);
+  padding-inline: 0.25rem;
+}
+
+.settings > * {
+  align-items: start;
+  grid-column: 1/2;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-block: 0.75rem;
+}
+
+@media print {
+  .settings {
+    display: none;
+  }
+}
+
+textarea,
+button {
+  border-radius: 0;
+  border: 0;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  font-family: inherit;
+}
+
+input {
+  border: var(--text-clr) 2px solid;
+}
+
+textarea {
+  border: var(--text-clr) 2px solid;
+}
+
+button {
+  background: var(--primary-clr);
+  color: var(--text-clr);
+  padding: 0.5rem 0.75rem;
+  border: 2px var(--primary-clr) solid;
+  transition: color 0.25s ease-in;
+}
+
+button:hover {
+  background-color: var(--bg-clr);
   color: var(--primary-clr);
 }
