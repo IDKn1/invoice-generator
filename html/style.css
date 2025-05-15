@@ -2,6 +2,7 @@
   --primary-clr: #00cc64;
   --bg-clr: white;
   --text-clr: #333333;
+  --grid-column-layout: 65% 1fr 1fr 1fr;
 }
 
 * {
@@ -102,7 +103,7 @@ body {
 /* heading styling */
 .heading {
   display: grid;
-  grid-template-columns: 65% 1fr 1fr 1fr;
+  grid-template-columns: var(--grid-column-layout);
 }
 
 .detail-text {
@@ -114,11 +115,13 @@ body {
   grid-column: 3/5;
 }
 
-/* client styling */
-
-.client-details {
+.subheading {
+  display: grid;
+  grid-template-columns: var(--grid-column-layout);
   padding-block: 5rem 3rem;
 }
+
+/* client styling */
 
 #company-name {
   color: var(--primary-clr);
@@ -132,7 +135,7 @@ body {
 
 .item {
   display: grid;
-  grid-template-columns: 65% 1fr 1fr 1fr;
+  grid-template-columns: var(--grid-column-layout);
   align-items: baseline;
   padding-block: 0.5rem;
 }
@@ -166,7 +169,7 @@ body {
 
 .total-row {
   display: grid;
-  grid-template-columns: 65% 1fr 1fr 1fr;
+  grid-template-columns: var(--grid-column-layout);
 }
 
 .total-row {

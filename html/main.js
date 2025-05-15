@@ -5,6 +5,27 @@ function invoiceNumber() {
   numberOutput.textContent = numberPadding;
 }
 
+function clientDetails() {
+  inputToSetOutput("company-name-input", "company-name");
+  inputToSetOutput("client-name-input", "client-name");
+  inputToSetOutput("client-email-input", "client-email");
+  inputToSetOutput("client-location-input", "client-location");
+}
+
+function currentDate() {
+  const date = document.getElementById("date");
+  const currentDate = new Date();
+
+  date.textContent =
+    currentDate.getFullYear() +
+    "/" +
+    currentDate.getMonth("MM") +
+    "/" +
+    currentDate.getDay();
+}
+
+currentDate();
+
 function calculateTotal() {
   const items = document.querySelectorAll(".item-total");
   const cost = document.getElementById("cost-value");
@@ -88,13 +109,6 @@ document.getElementById("item-form").addEventListener("submit", function (e) {
 checkInputField(invoiceNumber);
 checkInputField(calculateTotal);
 checkInputField(clientDetails);
-
-function clientDetails() {
-  inputToSetOutput("company-name-input", "company-name");
-  inputToSetOutput("client-name-input", "client-name");
-  inputToSetOutput("client-email-input", "client-email");
-  inputToSetOutput("client-location-input", "client-location");
-}
 
 function inputToSetOutput(inputID, outputID) {
   const input = document.getElementById(inputID);
