@@ -1,3 +1,23 @@
+// helper functions
+function inputToSetOutput(inputID, outputID) {
+  const input = document.getElementById(inputID);
+  const output = document.getElementById(outputID);
+  if (input.value != "") {
+    output.textContent = input.value;
+  }
+}
+
+function checkInputField(func) {
+  func();
+  setInterval(func, 500);
+}
+
+function contactDetails() {
+  inputToSetOutput("emailInput", "email");
+  inputToSetOutput("emailInput", "payment-details");
+  inputToSetOutput("phoneInput", "phone");
+}
+
 function invoiceNumber() {
   const numberInput = document.getElementById("invoice-number-input").value;
   const numberOutput = document.getElementById("invoice-number");
@@ -19,12 +39,10 @@ function currentDate() {
   date.textContent =
     currentDate.getFullYear() +
     "/" +
-    currentDate.getMonth("MM") +
+    ("0" + currentDate.getMonth()).slice(-2) +
     "/" +
-    currentDate.getDay();
+    currentDate.getDate();
 }
-
-currentDate();
 
 function calculateTotal() {
   const items = document.querySelectorAll(".item-total");
@@ -98,7 +116,7 @@ function itemUpdate() {
   });
 
   // Clear input after adding
-  // document.getElementById("items-input").value = "";
+  document.getElementById("items-input").value = "";
 }
 
 document.getElementById("item-form").addEventListener("submit", function (e) {
@@ -106,27 +124,12 @@ document.getElementById("item-form").addEventListener("submit", function (e) {
   itemUpdate();
 });
 
+checkInputField(contactDetails);
 checkInputField(invoiceNumber);
 checkInputField(calculateTotal);
 checkInputField(clientDetails);
-
-function inputToSetOutput(inputID, outputID) {
-  const input = document.getElementById(inputID);
-  const output = document.getElementById(outputID);
-  output.textContent = input.value;
-}
-
-function checkInputField(func) {
-  func();
-  setInterval(func, 500);
-}
+currentDate();
 
 function savePDF() {
-  const em = "nikolaisuvanto@gmail.com";
-  const target = document.getElementById("payment-details");
-
-  target.textContent = em;
-
   window.print();
-  setTimeout((target.textContent = ""), 300);
 }

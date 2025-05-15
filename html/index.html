@@ -9,18 +9,24 @@
   <body>
     <div id="invoice">
       <div class="heading">
-        <h1> Nikolai Suvanto</h1>
-        <div class="detail-text">
+        <h1> Nikolai Suvanto
+          <div class="contact">
+            <p id="email">  email(at)email.com</p>
+            <p id="phone">  (xxx) xxx xxxx</p>
+          </div>
+        </h1>
+        <div class="invoice-text">
           <h4 class="label">Invoice #</h4>
           <h2 id="invoice-number">00000</h2>
         </div>
       </div>
       <div class="subheading">
         <div class="client-details"> 
-          <h3 id="company-name"></h3>
-          <h5 id="client-name"> </h5>
-          <h5 id="client-email"> </h5>
-          <p id="client-location"></p>
+          <p>Client</p>
+          <h4 id="company-name">COMPANY NAME </h4>
+          <h6 id="client-name">CLIENT NAME</h6>
+          <h6 id="client-email">CLIENT@EMAIL</h6>
+          <p id="client-location">LOCATION</p>
         </div>
         <div class="date">
           <p>Date </p>
@@ -61,6 +67,12 @@
       </div>
     </div>
     <div class="settings"> 
+      <div class="contact-info">
+        <label for="email">email</label>
+        <input id="emailInput" type="text" name="email">
+        <label for="phoneNumber">phone</label>
+        <input id="phoneInput" type="text" name="phoneNumber">
+      </div>
       <div class="invoice-number">
         <label for="invoiceNumber">invoice number </label>
         <input id="invoice-number-input" type="text" name="invoiceNumber">
@@ -80,13 +92,15 @@
         <label for="clientLocation">client location </label>
         <input id="client-location-input" type="text" name="clientLocation">
       </form>
-      <div class="tax-rate"> 
-        <label for="taxed">tax?</label>
-        <input id="taxed" type="checkbox" name="taxed">
-      </div>
-      <div class="amount-paid">
-        <label for="paidAmount">amount already paid</label>
-        <input id="paid-amount" type="text" name="paidAmount">
+      <div class="total-settings">
+        <div class="tax-rate"> 
+          <label for="taxed">tax?</label>
+          <input id="taxed" type="checkbox" name="taxed">
+        </div>
+        <div class="amount-paid">
+          <label for="paidAmount">amount already paid</label>
+          <input id="paid-amount" type="text" name="paidAmount">
+        </div>
       </div>
       <button onclick="savePDF();">Download as PDF</button>
     </div>

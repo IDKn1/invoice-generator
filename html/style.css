@@ -106,7 +106,19 @@ body {
   grid-template-columns: var(--grid-column-layout);
 }
 
-.detail-text {
+.heading h1 {
+  position: relative;
+  max-width: 6ch;
+}
+
+.contact {
+  position: absolute;
+  top: 0rem;
+  left: 6ch;
+  line-height: 1.25;
+}
+
+.invoice-text {
   border-inline-start: 5px solid var(--text-clr);
   padding-inline-start: 1rem;
   /* margin-block: 1rem; */
@@ -128,6 +140,10 @@ body {
 }
 
 /* item list styling */
+
+.item-list {
+  padding-bottom: 3rem;
+}
 
 .item:first-child {
   border-bottom: 3px solid var(--text-clr);
@@ -161,7 +177,7 @@ body {
 }
 
 #payment-details {
-  color: var(--primary-clr);
+  color: var(--text-clr);
   font-weight: 900;
 }
 
@@ -179,7 +195,6 @@ body {
 
 .total-list {
   grid-column: 2/5;
-  padding-top: 3rem;
 }
 
 .total-list > * {
@@ -206,6 +221,10 @@ body {
   width: fit-content;
   padding: 1rem;
   position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-auto-flow: dense;
+  gap: 1rem;
 }
 
 .settings::before {
@@ -219,7 +238,6 @@ body {
 
 .settings > * {
   align-items: start;
-  grid-column: 1/2;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -254,9 +272,11 @@ textarea {
 button {
   background: var(--primary-clr);
   color: var(--text-clr);
-  padding: 0.5rem 0.75rem;
+  padding: 0.5rem 1.75rem;
   border: 2px var(--primary-clr) solid;
   transition: color 0.25s ease-in;
+  width: fit-content;
+  height: fit-content;
 }
 
 button:hover {

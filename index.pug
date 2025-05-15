@@ -9,15 +9,19 @@ html(lang="en")
         #invoice
             .heading
                 h1  Nikolai Suvanto
-                .detail-text
+                    .contact
+                        p#email   email(at)email.com
+                        p#phone   (xxx) xxx xxxx
+                .invoice-text
                     h4.label Invoice #
                     h2#invoice-number 00000
             .subheading
                 .client-details 
-                    h3#company-name
-                    h5#client-name 
-                    h5#client-email 
-                    p#client-location
+                    p Client
+                    h4#company-name COMPANY NAME 
+                    h6#client-name CLIENT NAME
+                    h6#client-email CLIENT@EMAIL
+                    p#client-location LOCATION
                 .date
                     p Date 
                     h4#date
@@ -45,6 +49,11 @@ html(lang="en")
                         p amount due
                         h2#total-value 0
         .settings 
+            .contact-info
+                label(for="email") email
+                input#emailInput(type="text", name="email")
+                label(for="phoneNumber") phone
+                input#phoneInput(type="text", name="phoneNumber") 
             .invoice-number
                 label(for="invoiceNumber") invoice number 
                 input#invoice-number-input(type="text", name="invoiceNumber") 
@@ -61,12 +70,13 @@ html(lang="en")
                 input#client-email-input(type="text", name="clientEmail")
                 label(for="clientLocation") client location 
                 input#client-location-input(type="text", name="clientLocation") 
-            .tax-rate 
-                label(for="taxed") tax?
-                input#taxed(type="checkbox", name="taxed")
-            .amount-paid
-                label(for="paidAmount") amount already paid
-                input#paid-amount(type="text", name="paidAmount") 
+            .total-settings
+                .tax-rate 
+                    label(for="taxed") tax?
+                    input#taxed(type="checkbox", name="taxed")
+                .amount-paid
+                    label(for="paidAmount") amount already paid
+                    input#paid-amount(type="text", name="paidAmount") 
             button(onclick="savePDF();") Download as PDF
 
 
