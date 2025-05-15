@@ -11,7 +11,7 @@ html(lang="en")
                 h1  Nikolai Suvanto
                 .detail-text
                     h3.label Invoice #
-                    h2#invoice-number(contenteditable="true") 00001
+                    h2#invoice-number 00000
             #item-list
                 .item
                     p.item-desc-label    description 
@@ -28,11 +28,14 @@ html(lang="en")
                         h4#tax-value 0
                     .paid
                         p paid
-                        h4#paid-value(contenteditable="true") 0
+                        h4#paid-value 0
                     .total
                         p amount due
                         h2#total-value 0
         .settings 
+            .invoice-number
+                label(for="invoiceNumber") invoice number 
+                input#invoice-number-input(type="text", name="invoiceNumber") 
             form#item-form.items-input 
                 label(for="itemInput") input for csv of items (format: description, qty/hr, rate)
                 textarea#items-input(name="itemInput")
@@ -40,6 +43,9 @@ html(lang="en")
             .tax-rate 
                 label(for="taxed") tax?
                 input#taxed(type="checkbox", name="taxed")
+            .amount-paid
+                label(for="paidAmount") amount already paid
+                input#paid-amount(type="text", name="paidAmount") 
             button(onclick="window.print();") Download as PDF
 
 

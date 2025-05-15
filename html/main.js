@@ -1,6 +1,14 @@
+function invoiceNumber() {
+  const numberInput = document.getElementById("invoice-number-input").value;
+  const numberOutput = document.getElementById("invoice-number");
+  const numberPadding = ("00000" + numberInput).slice(-5);
+  numberOutput.textContent = numberPadding;
+}
+
 function calculateTotal() {
   const items = document.querySelectorAll(".item-total");
   const cost = document.getElementById("cost-value");
+  const paidInput = document.getElementById("paid-amount");
   const paid = document.getElementById("paid-value");
   const tax = document.getElementById("tax-value");
   const total = document.getElementById("total-value");
@@ -16,10 +24,11 @@ function calculateTotal() {
   });
 
   const taxAmount = taxed.checked ? itemsCost * 0.13 : 0;
-  const paidAmount = parseFloat(paid.textContent) || 0;
+  const paidAmount = parseFloat(paidInput.value || 0).toFixed(2);
 
   tax.textContent = taxAmount.toFixed(2);
   cost.textContent = itemsCost.toFixed(2);
+  paid.textContent = paidAmount;
   total.textContent = (itemsCost + taxAmount - paidAmount).toFixed(2);
 }
 
@@ -77,5 +86,7 @@ document.getElementById("item-form").addEventListener("submit", function (e) {
 });
 
 // Set interval once
+invoiceNumber();
 calculateTotal();
+setInterval(invoiceNumber, 500);
 setInterval(calculateTotal, 500);
