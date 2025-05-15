@@ -29,7 +29,7 @@ function calculateTotal() {
   tax.textContent = taxAmount.toFixed(2);
   cost.textContent = itemsCost.toFixed(2);
   paid.textContent = paidAmount;
-  total.textContent = (itemsCost + taxAmount - paidAmount).toFixed(2);
+  total.textContent = "$" + (itemsCost + taxAmount - paidAmount).toFixed(2);
 }
 
 function parseToArray(csvInput) {
@@ -67,7 +67,7 @@ function itemUpdate() {
     const itemTotal = document.createElement("h5");
     itemTotal.classList.add("item-total");
 
-    itemTotal.textContent = calcItemTotal(item[1], item[2]);
+    itemTotal.textContent = calcItemTotal(item[1], item[2]).toFixed(2);
 
     itemDiv.appendChild(itemDesc);
     itemDiv.appendChild(itemQty);
@@ -77,7 +77,7 @@ function itemUpdate() {
   });
 
   // Clear input after adding
-  document.getElementById("items-input").value = "";
+  // document.getElementById("items-input").value = "";
 }
 
 document.getElementById("item-form").addEventListener("submit", function (e) {
@@ -85,11 +85,27 @@ document.getElementById("item-form").addEventListener("submit", function (e) {
   itemUpdate();
 });
 
-// Set interval once
-invoiceNumber();
-calculateTotal();
-setInterval(invoiceNumber, 500);
-setInterval(calculateTotal, 500);
+checkInputField(invoiceNumber);
+checkInputField(calculateTotal);
+checkInputField(clientDetails);
+
+function clientDetails() {
+  inputToSetOutput("company-name-input", "company-name");
+  inputToSetOutput("client-name-input", "client-name");
+  inputToSetOutput("client-email-input", "client-email");
+  inputToSetOutput("client-location-input", "client-location");
+}
+
+function inputToSetOutput(inputID, outputID) {
+  const input = document.getElementById(inputID);
+  const output = document.getElementById(outputID);
+  output.textContent = input.value;
+}
+
+function checkInputField(func) {
+  func();
+  setInterval(func, 500);
+}
 
 function savePDF() {
   const em = "nikolaisuvanto@gmail.com";

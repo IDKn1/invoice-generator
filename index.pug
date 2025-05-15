@@ -10,8 +10,13 @@ html(lang="en")
             .heading
                 h1  Nikolai Suvanto
                 .detail-text
-                    h3.label Invoice #
+                    h4.label Invoice #
                     h2#invoice-number 00000
+            .client-details 
+                h3#company-name
+                h5#client-name 
+                h5#client-email 
+                p#client-location
             #item-list
                 .item
                     p.item-desc-label    description 
@@ -39,10 +44,19 @@ html(lang="en")
             .invoice-number
                 label(for="invoiceNumber") invoice number 
                 input#invoice-number-input(type="text", name="invoiceNumber") 
-            form#item-form.items-input 
+            form#item-form
                 label(for="itemInput") input for csv of items (format: description, qty/hr, rate)
                 textarea#items-input(name="itemInput")
                 button(type="submit") update items
+            form#client-form
+                label(for="companyName") company name 
+                input#company-name-input(type="text", name="companyName") 
+                label(for="clientName") client name 
+                input#client-name-input(type="text", name="clientName") 
+                label(for="clientEmail") client email 
+                input#client-email-input(type="text", name="clientEmail")
+                label(for="clientLocation") client location 
+                input#client-location-input(type="text", name="clientLocation") 
             .tax-rate 
                 label(for="taxed") tax?
                 input#taxed(type="checkbox", name="taxed")

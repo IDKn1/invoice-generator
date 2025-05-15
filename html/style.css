@@ -114,6 +114,16 @@ body {
   grid-column: 3/5;
 }
 
+/* client styling */
+
+.client-details {
+  padding-block: 5rem 3rem;
+}
+
+#company-name {
+  color: var(--primary-clr);
+}
+
 /* item list styling */
 
 .item:not(:first-child) {

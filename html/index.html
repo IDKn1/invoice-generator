@@ -11,9 +11,15 @@
       <div class="heading">
         <h1> Nikolai Suvanto</h1>
         <div class="detail-text">
-          <h3 class="label">Invoice #</h3>
+          <h4 class="label">Invoice #</h4>
           <h2 id="invoice-number">00000</h2>
         </div>
+      </div>
+      <div class="client-details"> 
+        <h3 id="company-name"></h3>
+        <h5 id="client-name"> </h5>
+        <h5 id="client-email"> </h5>
+        <p id="client-location"></p>
       </div>
       <div id="item-list">
         <div class="item">
@@ -53,10 +59,20 @@
         <label for="invoiceNumber">invoice number </label>
         <input id="invoice-number-input" type="text" name="invoiceNumber">
       </div>
-      <form class="items-input" id="item-form"> 
+      <form id="item-form">
         <label for="itemInput">input for csv of items (format: description, qty/hr, rate)</label>
         <textarea id="items-input" name="itemInput"></textarea>
         <button type="submit">update items</button>
+      </form>
+      <form id="client-form">
+        <label for="companyName">company name </label>
+        <input id="company-name-input" type="text" name="companyName">
+        <label for="clientName">client name </label>
+        <input id="client-name-input" type="text" name="clientName">
+        <label for="clientEmail">client email </label>
+        <input id="client-email-input" type="text" name="clientEmail">
+        <label for="clientLocation">client location </label>
+        <input id="client-location-input" type="text" name="clientLocation">
       </form>
       <div class="tax-rate"> 
         <label for="taxed">tax?</label>
