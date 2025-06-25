@@ -4,7 +4,8 @@ html(lang="en")
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         title Invoice generator 
-        link(rel="stylesheet", href="/style.css")
+        link(rel="stylesheet", href="style.css")
+        link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css")
     body
         //850px is portrait letter print width
         //and 1090px for landscape letter
@@ -27,12 +28,13 @@ html(lang="en")
                 .date
                     p Date 
                     h4#date
-            #item-list
+            #item-list 
                 .item
                     p.item-desc-label    description 
                     p.item-qty-label     qty/hr
                     p.item-amount-label  rate
                     p.item-total-label  total 
+                
             .total-row
                 .payment-details 
                     p Invoice payable through E-Transfer to
@@ -50,7 +52,19 @@ html(lang="en")
                     .total
                         p amount due
                         h2#total-value 0
-        .settings 
+        button#modal-toggle-btn-item.modal-btn(type="button") 
+            i.fa-solid.fa-plus
+        #add-item-modal.modal(style="display: none;")
+            form#item-form 
+                    input#item-desc(type="text", placeholder="Description")
+                    input#item-qty(type="text", placeholder="Quantity/Hours")
+                    input#item-rate(type="text", placeholder="Rate")
+                    button(type="submit") Add Item
+            button.modal-close()
+                i.fa-solid.fa-xmark
+        button#modal-toggle-btn-info.modal-btn(type="button") 
+            i.fa-regular.fa-rectangle-list
+        #info-modal.modal(style="display: none;")
             .contact-info
                 label(for="email") email
                 input#emailInput(type="text", name="email")
@@ -59,10 +73,7 @@ html(lang="en")
             .invoice-number
                 label(for="invoiceNumber") invoice number 
                 input#invoice-number-input(type="text", name="invoiceNumber") 
-            form#item-form
-                label(for="itemInput") input for csv of items (format: description, qty/hr, rate)
-                textarea#items-input(name="itemInput")
-                button(type="submit") update items
+                
             form#client-form
                 label(for="companyName") company name 
                 input#company-name-input(type="text", name="companyName") 
@@ -79,7 +90,10 @@ html(lang="en")
                 .amount-paid
                     label(for="paidAmount") amount already paid
                     input#paid-amount(type="text", name="paidAmount") 
+            button.modal-close(type="button")
+                i.fa-solid.fa-xmark
             button(onclick="savePDF();") Download as PDF
 
 
-        script(src="/main.js") 
+        script(src="main.js") 
+        script(src="modal.js" type="module") 

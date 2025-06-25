@@ -81,42 +81,45 @@ function calcItemTotal(itemQty, itemCost) {
 }
 
 function itemUpdate() {
-  const itemsInput = document.getElementById("items-input").value;
+  const itemDescInput = document.getElementById("item-desc").value;
+  const itemQtyInput = document.getElementById("item-qty").value;
+  const itemRateInput = document.getElementById("item-rate").value;
   const itemList = document.getElementById("item-list");
 
-  const parsed = parseToArray(itemsInput);
-  parsed.forEach((item) => {
-    if (item.length < 3) return; // skip incomplete rows
+  if (!itemDescInput || !itemQtyInput || !itemRateInput) return;
+  const item = [itemDescInput, itemQtyInput, itemRateInput];
+  const itemDiv = document.createElement("div");
+  itemDiv.className = "item";
 
-    const itemDiv = document.createElement("div");
-    itemDiv.className = "item";
+  const itemDesc = document.createElement("p");
+  itemDesc.classList.add("item-desc");
+  itemDesc.textContent = item[0];
 
-    const itemDesc = document.createElement("p");
-    itemDesc.classList.add("item-desc");
-    itemDesc.textContent = item[0];
+  const itemQty = document.createElement("p");
+  itemQty.classList.add("item-qty");
+  itemQty.textContent = item[1];
 
-    const itemQty = document.createElement("p");
-    itemQty.classList.add("item-qty");
-    itemQty.textContent = item[1];
+  const itemCost = document.createElement("p");
+  itemCost.classList.add("item-cost");
+  itemCost.textContent = item[2];
 
-    const itemCost = document.createElement("p");
-    itemCost.classList.add("item-cost");
-    itemCost.textContent = item[2];
+  const itemTotal = document.createElement("h5");
+  itemTotal.classList.add("item-total");
 
-    const itemTotal = document.createElement("h5");
-    itemTotal.classList.add("item-total");
+  itemTotal.textContent = calcItemTotal(item[1], item[2]).toFixed(2);
 
-    itemTotal.textContent = calcItemTotal(item[1], item[2]).toFixed(2);
-
-    itemDiv.appendChild(itemDesc);
-    itemDiv.appendChild(itemQty);
-    itemDiv.appendChild(itemCost);
-    itemDiv.appendChild(itemTotal);
-    itemList.appendChild(itemDiv);
-  });
+  itemDiv.appendChild(itemDesc);
+  itemDiv.appendChild(itemQty);
+  itemDiv.appendChild(itemCost);
+  itemDiv.appendChild(itemTotal);
+  itemList.appendChild(itemDiv);
 
   // Clear input after adding
-  document.getElementById("items-input").value = "";
+  document.getElementById("item-desc").value = "";
+  document.getElementById("item-qty").value = "";
+  document.getElementById("item-rate").value = "";
+
+  document.getElementById("item-desc").focus();
 }
 
 document.getElementById("item-form").addEventListener("submit", function (e) {
