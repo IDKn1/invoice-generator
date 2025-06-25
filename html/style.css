@@ -26,10 +26,9 @@
 
 @font-face {
   font-family: "Junicode";
-  src: url("fonts/Junicode-BoldItalicCondensed.ttf") format("truetype");
-  font-weight: 700;
-  font-style: italic;
-  font-stretch: condensed;
+  src: url("fonts/JunicodeVF-Italic.woff2") format("woff2");
+  font-weight: 800;
+  font-stretch: 87.5%;
 }
 
 /* improve line wrapping */
@@ -93,7 +92,7 @@ body {
 }
 
 .label {
-  font-family: "junicode";
+  font-family: "junicode", "Times New Roman", Times, serif;
 }
 
 /* heading styling */
@@ -222,6 +221,7 @@ body {
   z-index: 9;
   aspect-ratio: 1;
   width: 50px;
+  height: 50px;
   font-size: 2rem;
   border: none;
   color: var(--primary-clr);
@@ -257,6 +257,7 @@ body {
   border-radius: 50%;
   aspect-ratio: 1;
   width: 35px;
+  height: 35px;
   padding: 0rem;
   font-size: 1.75rem;
 }
