@@ -90,6 +90,7 @@ function itemUpdate() {
   const item = [itemDescInput, itemQtyInput, itemRateInput];
   const itemDiv = document.createElement("div");
   itemDiv.className = "item";
+  itemDiv.classList.add("grid-12-col");
 
   const itemDesc = document.createElement("p");
   itemDesc.classList.add("item-desc");
