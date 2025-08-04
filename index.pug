@@ -14,8 +14,8 @@ html(lang="en")
             .heading.grid-12-col
                 h1  Nikolai Suvanto
                     .contact
-                        p#email   email(at)email.com
-                        p#phone   (xxx) xxx xxxx
+                        p#email-value   email(at)email.com
+                        p#phone-value   (xxx) xxx xxxx
                 .invoice-text
                     h4.label Invoice #
                     h2#invoice-number 00000
@@ -68,33 +68,35 @@ html(lang="en")
         #info-modal.modal(style="display: none;")
             .contact-info
                 label(for="email") email
-                input#emailInput(type="text", name="email")
+                input#email(type="text", name="email")
                 label(for="phoneNumber") phone
-                input#phoneInput(type="text", name="phoneNumber")
+                input#phone(type="text", name="phoneNumber")
             .invoice-number
                 label(for="invoiceNumber") invoice number
-                input#invoice-number-input(type="text", name="invoiceNumber")
+                input#invoiceNumber(type="text", name="invoiceNumber")
 
             form#client-form
                 label(for="companyName") company name
-                input#company-name-input(type="text", name="companyName")
+                input#companyName(type="text", name="companyName")
                 label(for="clientName") client name
-                input#client-name-input(type="text", name="clientName")
+                input#clientName(type="text", name="clientName")
                 label(for="clientEmail") client email
-                input#client-email-input(type="text", name="clientEmail")
+                input#clientEmail(type="text", name="clientEmail")
                 label(for="clientLocation") client location
-                input#client-location-input(type="text", name="clientLocation")
+                input#clientLocation(type="text", name="clientLocation")
             .total-settings
                 .tax-rate
                     label(for="taxed") tax?
                     input#taxed(type="checkbox", name="taxed")
                 .amount-paid
                     label(for="paidAmount") amount already paid
-                    input#paid-amount(type="text", name="paidAmount")
+                    input#amountPaid(type="text", name="paidAmount")
             button.modal-close(type="button")
                 i.fa-solid.fa-xmark
             button(onclick="savePDF();") Download as PDF
 
 
         script(src="main.js")
+        script(src="items.js")
+        script(src="details.js")
         script(src="modal.js" type="module")

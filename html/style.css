@@ -49,7 +49,7 @@ body {
     /* margin-block: 1rem; */
     padding-block: 0.75rem;
     height: min-content;
-    grid-column: 9/13;
+    grid-column: 10/13;
 }
 
 .subheading {

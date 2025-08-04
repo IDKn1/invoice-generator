@@ -15,8 +15,8 @@
       <div class="heading grid-12-col">
         <h1> Nikolai Suvanto
           <div class="contact">
-            <p id="email">  email(at)email.com</p>
-            <p id="phone">  (xxx) xxx xxxx</p>
+            <p id="email-value">  email(at)email.com</p>
+            <p id="phone-value">  (xxx) xxx xxxx</p>
           </div>
         </h1>
         <div class="invoice-text">
@@ -84,23 +84,23 @@
     <div class="modal" id="info-modal" style="display: none;">
       <div class="contact-info">
         <label for="email">email</label>
-        <input id="emailInput" type="text" name="email">
+        <input id="email" type="text" name="email">
         <label for="phoneNumber">phone</label>
-        <input id="phoneInput" type="text" name="phoneNumber">
+        <input id="phone" type="text" name="phoneNumber">
       </div>
       <div class="invoice-number">
         <label for="invoiceNumber">invoice number</label>
-        <input id="invoice-number-input" type="text" name="invoiceNumber">
+        <input id="invoiceNumber" type="text" name="invoiceNumber">
       </div>
       <form id="client-form">
         <label for="companyName">company name</label>
-        <input id="company-name-input" type="text" name="companyName">
+        <input id="companyName" type="text" name="companyName">
         <label for="clientName">client name</label>
-        <input id="client-name-input" type="text" name="clientName">
+        <input id="clientName" type="text" name="clientName">
         <label for="clientEmail">client email</label>
-        <input id="client-email-input" type="text" name="clientEmail">
+        <input id="clientEmail" type="text" name="clientEmail">
         <label for="clientLocation">client location</label>
-        <input id="client-location-input" type="text" name="clientLocation">
+        <input id="clientLocation" type="text" name="clientLocation">
       </form>
       <div class="total-settings">
         <div class="tax-rate">
@@ -109,13 +109,15 @@
         </div>
         <div class="amount-paid">
           <label for="paidAmount">amount already paid</label>
-          <input id="paid-amount" type="text" name="paidAmount">
+          <input id="amountPaid" type="text" name="paidAmount">
         </div>
       </div>
       <button class="modal-close" type="button"><i class="fa-solid fa-xmark"></i></button>
       <button onclick="savePDF();">Download as PDF</button>
     </div>
     <script src="main.js"></script>
+    <script src="items.js"></script>
+    <script src="details.js"></script>
     <script src="modal.js" type="module"></script>
   </body>
 </html>
